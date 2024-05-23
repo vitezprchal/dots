@@ -1,0 +1,23 @@
+{
+    "include": "~/.config/waybar/modules",
+    "layer": "top",
+    "exclusive": true,
+    "passthrough": false,
+    "position": "top",
+    "spacing": 0,
+    "fixed-center": true,
+    "ipc": true,
+    "modules-left": [
+        "clock",
+        "cpu",
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "tray",
+        "backlight",
+        "bluetooth",
+        "cava"
+    ],
+}

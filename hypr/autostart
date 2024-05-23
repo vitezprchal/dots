@@ -1,0 +1,18 @@
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+export $(gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+
+
+eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+export $(gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+
+
+
+hyprpaper
+
+sleep 1
+killall xdg-desktop-portal-hyprland
+killall xdg-desktop-portal
+/usr/lib/xdg-desktop-portal-hyprland &
+sleep 2
+/usr/lib/xdg-desktop-portal &
