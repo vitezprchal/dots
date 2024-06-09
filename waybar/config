@@ -18,6 +18,7 @@
         "tray",
         "backlight",
         "bluetooth",
+        "group/sound",
         "cava"
     ],
 }

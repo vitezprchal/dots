@@ -26,12 +26,42 @@
         "tooltip-format-connected": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "Connected {device_alias}"
     },
+    "group/sound": {
+        "orientation": "inherit",
+        "modules": [
+            "group/audio"
+        ]
+    },
+    "group/audio": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio#mic",
+            "pulseaudio/slider"
+        ]
+    },
     "hyprland/workspaces": {
-        "format": "{name}",
+        "format": "{icon}",
+        //"format-icons": {
+        //    "active": "",
+        //    "default": "",
+        //    "persistent": ""
+        //},
         "format-icons": {
-            "active": "",
-            "default": "",
-            "persistent": ""
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十",
         },
         "on-scroll-up": "hyprctl dispatch workspace r-1",
         "on-scroll-down": "hyprctl dispatch workspace r+1",
@@ -40,12 +70,45 @@
             "*": 5
         }
     },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-bluetooth": "{icon}",
+        "tooltip-format": "{volume}% {icon} | {desc}",
+        "format-muted": "󰖁",
+        "format-icons": {
+            "headphones": "󰋌",
+            "handsfree": "󰋌",
+            "headset": "󰋌",
+            "phone": "",
+            "portable": "",
+            "car": " ",
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "on-click": "pavucontrol",
+        "smooth-scrolling-threshold": 1
+    },
+    "pulseaudio#mic": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "tooltip-format": "{volume}% {format_source} ",
+        "on-click": "pactl set-source-mute 0 toggle",
+        "on-scroll-down": "pactl set-source-volume 0 -1%",
+        "on-scroll-up": "pactl set-source-volume 0 +1%"
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 140,
+    },
     "cava": {
-        //        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
-        "framerate": 30,
+        "framerate": 60,
         "autosens": 1,
-        "sensitivity": 100,
-        "bars": 14,
+        "sensitivity": 1, //5
+        "bars": 16,
         "lower_cutoff_freq": 50,
         "higher_cutoff_freq": 10000,
         "method": "pulse",
